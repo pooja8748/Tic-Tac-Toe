@@ -2,6 +2,7 @@ package game;
 
 import player.*;
 
+import java.sql.Struct;
 import java.util.Scanner;
 
 import board.*;
@@ -72,10 +73,65 @@ public class Game {
     }
     public boolean checkCombinations()
     {
-        int sz
+        int sz = board.size;
+         //Rowvise
+         for(int i=0;i<sz;i++)
+         {
+            StringBuilder sb=new StringBuilder();
+            for(int j=0;j<sz;j++)
+            {
+                sb.append(board.matrix[i][j]);
+            }
+            String pattern =sb.toString();
+            if(pattern.equals(zero) || pattern.equals(cross))
+            {
+                return true;
+            }
+         }
+        //Columnvise
+        for(int i=0;i<sz;i++)
+         {
+            StringBuilder sb=new StringBuilder();
+            for(int j=0;j<sz;j++)
+            {
+                sb.append(board.matrix[j][i]);
+            }
+            String pattern =sb.toString();
+            if(pattern.equals(zero) || pattern.equals(cross))
+            {
+                return true;
+            }
+         }
+        //Diagonal
+        int i=0,j=0;
+        StringBuilder sb = new StringBuilder();
+        while(i<sz)
+        {
+            sb.append(board.matrix[i][j]);
+            i++;
+            j++;
+        }
+        String pattern = sb.toString();
+        if(pattern.equals(zero)|| pattern.equals(cross))
+        {
+            return true;
+        }
+        //Anti-Diagonal
+        i=0;
+        j=sz-1;
+        sb = new StringBuilder();
+        while(i<sz)
+        {
+            sb.append(board.matrix[i][j]);
+            i++;
+            j--;
+        }
+        pattern = sb.toString();
+        if(pattern.equals(zero)|| pattern.equals(cross))
+        {
+            return true;
+        }
+        return false;
     }
-    //Rowvise
-    //Columnvise
-    //Diagonal
-    //Anti-Diagonal
+   
 }
