@@ -10,3 +10,4 @@ Tic-Tac-Toe is a two-player game in which the players fill up nine empty rectang
 4. Github
 
 
+![image](https://github.com/pooja8748/Tic-Tac-Toe/assets/130728514/84c8c3ac-6e4b-40f0-ba90-815350642da2)
