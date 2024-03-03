@@ -1,10 +1,12 @@
 # AFE-2
+# Tic Tac Toe
+
+Tic-Tac-Toe is a two-player game in which the players fill up nine empty rectangles in a table with either an X or an O when it is their turn. Once someone succeeds to line up their sign vertically or horizontally without an interruption, that player wins.
 
 ### Pre-requisite.
--Revise OPPS concepts
--VS-code installation
--Java-Install 
--Github
+1. Revise OPPS concepts
+2. VS-code installation
+3. Java-Install
+4. Github
 
-![image](https://github.com/pooja8748/AFE-2/assets/130728514/d36f87b6-c74a-450b-a66c-aa53af15903f)
-![image](https://github.com/pooja8748/AFE-2/assets/130728514/9d87225d-c482-4ac6-869e-424b3dff7568)
+
