@@ -14,7 +14,7 @@ public class Board {
             }
         }
     }
-
+    
     public void printBoardConfig() {
         int sz = this.size;
         for (int i = 0; i < sz; i++) {
