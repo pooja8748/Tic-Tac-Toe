@@ -2,8 +2,8 @@ package board;
 
 public class Board {
     
-    int size;
-    char matrix[][];
+    public int size;
+    public char matrix[][];
     
     public Board(int size, char Defaultsymbol) {
         this.size = size;
