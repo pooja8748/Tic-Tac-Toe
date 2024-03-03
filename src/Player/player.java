@@ -1,8 +1,8 @@
-package Player;
+package player;
 
 import java.util.Scanner;
 
-public class player {
+public class Player {
 
     private String name;
     private char symbol;
