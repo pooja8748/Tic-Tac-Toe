@@ -1,8 +1,5 @@
 package game;
-
 import player.*;
-
-import java.sql.Struct;
 import java.util.Scanner;
 
 import board.*;
@@ -48,13 +45,39 @@ public class Game {
 
     public void play() {
         printBoardConfig();
+        int sz= board.size;
+        while(!gameOver)
+        {
+            noOfMoves++;
+            
+            int idx=getIndex();
+            int row=idx/sz;
+            int col=idx%sz;
+
+            board.matrix[row][col]=players[turn].getPlayerSymbol();
+            if(noOfMoves>=sz*sz)
+            {
+                System.out.println("Game Draw");
+                return;
+            }
+            if(noOfMoves>=2*sz-1 && checkCombinations()==true)
+            {
+                gameOver=true;
+                printBoardConfig();
+                System.out.println("Winner is:" + players[turn].getPlayerName());
+                return;
+            }
+            // turn = 0 => 0+1 = 1%2 =1;
+            // turn = 1 => 1+1 = 2%2 = 0;
+            turn = (turn + 1)%2;
+        }
 
     }
 
     public int getIndex() {
         while (true) {
             // Player Aman give one position
-            System.out.println("Player:" + players[turn].getPlayerName() + "give one position");
+            System.out.println("Player: " + players[turn].getPlayerName() + " " + "give one position");
             Scanner sc = new Scanner(System.in);
             int pos = sc.nextInt() - 1;
             int sz = board.size;
